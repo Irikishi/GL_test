@@ -1,0 +1,150 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Тестовое задание</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link href='http://fonts.googleapis.com/css?family=Arimo:400,400italic,700,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="dist\build_main.min.css">
+
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <div id="wrapper">
+            <header id="header">
+                <div class="container">
+                    <h3>Тестовое задание</h3>
+                </div>
+            </header>
+
+            <div id="main" class="container">
+                <div id="content">
+                    <div class="std-block">
+                        <h1>Общие требования<br>
+                        (h1 - Arimo, 36px; color: #292929)</h1>
+                        <ol>
+                            <li>Тестовое задание (ТЗ) состоит из нескольких частей. После выполнения каждой части необходимо фиксировать изменения коммитом на гитхабе.</li>
+                            <li>В верстке необходимо использовать один из CSS-препроцессоров (Sass, Less, Stylus или др.) и удобный вам инструмент для сборки проекта.</li>
+                            <li>Если в задании не указано как должен выглядеть блок, нужно постараться стилизовать его в стиле ТЗ, пиксельной точности не требуется</li>
+                        </ol>
+                        <p>текст - Arimo, 15px; color: #757575 <br>
+                        блок - box-shadow: 0 1px 2px rgba(0,0,0,.1);</p>
+                    </div>
+                    <div id="news" class="std-block">
+                        <h2>Часть 1: необходимо сверстать список новостей <br>
+                        (h2 - Arimo, 24px; color: #292929)</h2>
+                        <p>На странице отображается 5 новостей. В конце списка отображается кнопка "показать еще", при нажатии на которую в конец списка подгружается еще 5 новостей.</p>
+                        <p>Данные для загрузки новостей передаются в формате JSON:</p>
+                        <pre>
+[
+    {
+        "date": "06.01.2015",
+        "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        "preview": "Commodi atque vero ut dolorem, ullam qui sit! Modi numquam unde, aut ab. Perspiciatis, consequatur, natus.",
+        "url": "#testLink",
+        "image": "img/tmp/tmp.jpg"
+    },
+    {
+        "date": "07.01.2015",
+        "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        "preview": "Commodi atque vero ut dolorem, ullam qui sit! Modi numquam unde, aut ab. Perspiciatis, consequatur, natus.",
+        "url": "#testLink",
+        "image": "img/tmp/tmp.jpg"
+    },
+    {
+        "date": "08.01.2015",
+        "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        "preview": "Commodi atque vero ut dolorem, ullam qui sit! Modi numquam unde, aut ab. Perspiciatis, consequatur, natus.",
+        "url": "#testLink"
+    },
+    {
+        "date": "09.01.2015",
+        "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        "preview": "Commodi atque vero ut dolorem, ullam qui sit! Modi numquam unde, aut ab. Perspiciatis, consequatur, natus.",
+        "url": "#testLink",
+        "image": "img/tmp/tmp.jpg"
+    },
+    {
+        "date": "10.01.2015",
+        "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        "preview": "Commodi atque vero ut dolorem, ullam qui sit! Modi numquam unde, aut ab. Perspiciatis, consequatur, natus.",
+        "url": "#testLink",
+        "image": "img/tmp/tmp.jpg"
+    }
+]
+                        </pre>
+                        <ul>
+                            <li class="single">
+                                <img src="img/img.jpg" alt="1">
+                                <span class="date">01.01.2015</span>
+                                <a href="#" class="h3">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora praesentium dolore quae culpa ipsam. Commodi atque vero ut dolorem, ullam qui sit! Modi numquam unde, aut ab. Perspiciatis, consequatur, natus.</p>
+                            </li>
+                            <li class="single">
+                                <img src="img/img.jpg" alt="1">
+                                <span class="date">02.01.2015</span>
+                                <a href="#" class="h3">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora praesentium dolore quae culpa ipsam. Commodi atque vero ut dolorem, ullam qui sit! Modi numquam unde, aut ab. Perspiciatis, consequatur, natus.</p>
+                            </li>
+                            <li class="single">
+                                <span class="date">03.01.2015</span>
+                                <a href="#" class="h3">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora praesentium dolore quae culpa ipsam. Commodi atque vero ut dolorem, ullam qui sit! Modi numquam unde, aut ab. Perspiciatis, consequatur, natus.</p>
+                            </li>
+                            <li class="single">
+                                <img src="img/img.jpg" alt="1">
+                                <span class="date">04.01.2015</span>
+                                <a href="#" class="h3">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora praesentium dolore quae culpa ipsam. Commodi atque vero ut dolorem, ullam qui sit! Modi numquam unde, aut ab. Perspiciatis, consequatur, natus.</p>
+                            </li>
+                            <li class="single">
+                                <img src="img/img.jpg" alt="1">
+                                <span class="date">05.01.2015</span>
+                                <a href="#" class="h3">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora praesentium dolore quae culpa ipsam. Commodi atque vero ut dolorem, ullam qui sit! Modi numquam unde, aut ab. Perspiciatis, consequatur, natus.</p>
+                            </li>
+                        </ul>
+
+                        <div id="add-news" class="btn">Показать еще</div>
+
+                    </div>
+                    <div id="feedback" class="std-block">
+                        222
+                    </div>
+                    <div id="block-ico" class="std-block">
+                        333
+                    </div>
+                </div>
+                <aside id="right-side">
+                    <nav class="std-block">
+                        <ul>
+                            <li><a href="#news">Часть 1: список новостей</a></li>
+                            <li><a href="#feedback">Часть 2: форма</a></li>
+                            <li><a href="#block-ico">Часть 3: блок с иконками</a></li>
+                        </ul>
+                    </nav>
+                </aside>
+            </div>
+
+            <footer>
+                <div class="container">
+                    <h3>111</h3>
+                </div>
+            </footer>
+        </div>
+
+        <script src="js/jquery-1.11.3.min.js"></script>
+        <script src="js/main.js"></script>
+
+    </body>
+</html>
