@@ -119,7 +119,50 @@
 
                     </div>
                     <div id="feedback" class="std-block">
-                        222
+                        <h2>Часть 2: форма обратной связи</h2>
+
+                        <p>При нажатии на кнопку "Обратная связь" необходимо открывать всплывающее окно с формой (Ajax), содержащей следующие поля:</p>
+                        <ol>
+                            <li>ФИО (обязательное поле)</li>
+                            <li>Телефон (обязательное поле, если не заполнено поле "Email")</li>
+                            <li>Email (обязательное поле, если не заполнено поле "Телефон")</li>
+                            <li>Текст сообщения (обязательное поле)</li>
+                            <li>Отправить</li>
+                        </ol>
+
+                        <p>Форма должна валидироваться на клиенте, после отправки формы, с сервера приходит ответ в формате JSON.</p>
+
+                        <p>В случае успеха:</p>
+                        <pre>
+{
+    "success": true,
+    "msg": "Сообщение отправлено, в ближайшее время наш менеджер свяжется с Вами."
+}
+                        </pre>
+
+                        <p>В случае неудачи:</p>
+                        <pre>
+{
+    "success": false,
+    "fields": [
+        {
+            "name": "email"
+            "error": "Введенный Вами e-mail не найден"
+        }
+    ]
+}
+                        </pre>
+
+                        <p>или</p>
+                        <pre>
+{
+    "success": false,
+    "msg": "Ошибка отправки формы"
+}
+                        </pre>
+
+                        <div id="btn-feedback" class="btn">Обратная связь</div>
+
                     </div>
                     <div id="block-ico" class="std-block">
                         333
@@ -144,6 +187,8 @@
         </div>
 
         <script src="js/jquery-1.11.3.min.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/additional-methods.min.js"></script>
         <script src="js/main.js"></script>
 
     </body>

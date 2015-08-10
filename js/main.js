@@ -43,4 +43,125 @@ $(document).ready(function(){
         getNews(countNews);
     });
 
+
+    //получаем поля с сервера
+    var getForm = function(){
+        $.ajax({
+            type: 'POST',
+            url: 'form.php',
+            dataType: 'JSON',
+            success: function(data){
+                var formAreas = data;
+                if (formAreas.length > 0) {
+                    renderForm(formAreas);
+                    $('#popup form').validate({
+                        rules: {
+                            "name-0": {
+                                required: true
+                            },
+                            "email-2": {
+                                email: true,
+                                require_from_group: [1, ".phone-email"]
+                            },
+                            "tel-1":{
+                                require_from_group: [1, ".phone-email"]
+                            }
+                        },
+                        submitHandler: function(form) {
+
+                            sendFormData($(form).serialize());
+
+                            return false;
+                            // then:
+                            //$(form).submit();
+                        }
+                    });
+                }
+            }
+        });
+    };
+
+
+    // отправляем данные из формы на сервер
+    var sendFormData = function(dataForm){
+        $.ajax({
+            type: 'POST',
+            url: 'check_form.php',
+            dataType: 'JSON',
+            data: dataForm,
+            success: function(data){
+                $('#popup .wrapper').html('<p>' + data[0].msg + '</p>');
+            }
+        });
+    };
+
+
+    // создаем форму
+    var renderForm = function(formAreas){
+        $('body').append('<div id="popup"><div class="wrapper"><form action=""></form></div></div>');
+        delForm();
+        for (var i=0; i < formAreas.length; i++) {
+
+            var attrRequired;
+            if (formAreas[i].required === "true"){
+                attrRequired = 'required="required"';
+            } else {
+                attrRequired = ' ';
+            }
+            console.log(attrRequired);
+
+            if (formAreas[i].type === "textarea") {
+                $('#popup form').append('<div class="area"><label for="text-' + i + '">' +
+                    formAreas[i].title +
+                    '</label>' +
+                    '<textarea ' +
+                    attrRequired +
+                    ' id="text-' + i + '">' +
+                    '<\/textarea></div>');
+            } else if (formAreas[i].type === "submit") {
+                $('#popup form').append('<div class="area">' +
+                    '<input class="btn' +
+                    ' id="' + formAreas[i].type + '-' + i + '"' +
+                    ' type="' + formAreas[i].type + '"' +
+                    ' ></div>');
+            } else {
+                var groupClass = ' ';
+                if (formAreas[i].type === "email" || formAreas[i].type === "tel"){
+                    groupClass = 'phone-email';
+                } else {
+                    groupClass = ' ';
+                }
+
+                $('#popup form').append('<div class="area"><label for="' + formAreas[i].type + '-' + i +'">' +
+                    formAreas[i].title +
+                    '</label>' +
+                    '<input ' +
+                    attrRequired +
+                    ' name="' + formAreas[i].type + '-' + i + '"' +
+                    ' id="' + formAreas[i].type + '-' + i + '"' +
+                    ' class="' + groupClass + '"' +
+                    ' type="' + formAreas[i].type + '"' +
+                    ' ></div>');
+            }
+        }
+
+        $('#popup input[type="submit"]').on('click', function(){
+            //return false;
+        });
+
+    };
+
+    var delForm = function(){
+        $(document).click(function(event) {
+            if ($(event.target).closest("#popup .wrapper").length) return;
+            $("#popup").remove();
+            event.stopPropagation();
+        });
+    };
+
+    $('#btn-feedback').on('click', function(){
+        getForm();
+    });
+
+
 });
