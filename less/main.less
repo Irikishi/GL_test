@@ -93,7 +93,31 @@ pre {
     -o-transition: 0.4s;
     transition: 0.4s;
 
+    nav ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
 
+        li {
+            padding: 1em 0;
+            margin: 0;
+            border-bottom: 1px solid #dbdbdb;
+
+            &:last-child {
+                border-bottom: 0 none;
+            }
+
+            a {
+                color: #757575;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+        }
+    }
 
 }
 #content {

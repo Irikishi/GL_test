@@ -91,6 +91,26 @@ pre {
   -o-transition: 0.4s;
   transition: 0.4s;
 }
+#right-side nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+#right-side nav ul li {
+  padding: 1em 0;
+  margin: 0;
+  border-bottom: 1px solid #dbdbdb;
+}
+#right-side nav ul li:last-child {
+  border-bottom: 0 none;
+}
+#right-side nav ul li a {
+  color: #757575;
+  text-decoration: none;
+}
+#right-side nav ul li a:hover {
+  text-decoration: underline;
+}
 #content {
   float: left;
   width: 65.8%;
