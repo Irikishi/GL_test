@@ -456,6 +456,9 @@ h3,
   padding: 0 25px;
   width: 100%;
   margin: 0 auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 .container *:first-child {
   margin-top: 0;
@@ -516,6 +519,9 @@ pre {
   -o-transition: 0.4s;
   transition: 0.4s;
 }
+#right-side .aside-btn {
+  display: none;
+}
 #right-side nav ul {
   margin: 0;
   padding: 0;
@@ -563,8 +569,11 @@ pre {
 }
 #news ul li a {
   text-decoration: none;
-  display: inline-block;
-  margin: 1em 0;
+  display: block;
+  margin: 1em 0 1em 226px;
+}
+#news ul li:nth-child(2n) a {
+  margin: 1em 226px 1em 0;
 }
 #news ul li:nth-child(2n) img {
   float: right;
@@ -722,4 +731,67 @@ pre {
 }
 .icons-b64 .ico:first-child {
   margin-left: 0;
+}
+@media all and (max-width: 970px) {
+  #news ul li.single img {
+    float: none;
+    margin: 0;
+  }
+  #news ul li.single .date {
+    clear: both;
+    margin: 1em 0 0;
+  }
+  #news ul li.single a {
+    display: inline-block;
+    margin: 1em 0;
+  }
+}
+@media all and (max-width: 760px) {
+  #right-side {
+    position: absolute;
+    z-index: 100;
+    right: 0;
+    float: none;
+    width: auto;
+    margin-top: 60px;
+  }
+  #right-side .aside-btn {
+    display: block;
+    position: absolute;
+    top: 60px;
+    right: -30px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background-color: #fff;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  #right-side .std-block {
+    overflow: hidden;
+    width: 0;
+    padding: 0;
+  }
+  #right-side.open .std-block {
+    padding: 40px;
+    width: 100%;
+  }
+  #right-side.open .std-block {
+    width: 100%;
+    padding: 40px;
+  }
+  #content {
+    width: 100%;
+  }
+  #wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
 }

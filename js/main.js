@@ -181,5 +181,14 @@ $(document).ready(function(){
 
 
 
+    $('#right-side .aside-btn').on('click', function () {
+        if ($('#right-side').hasClass('open')) {
+            $('#right-side').removeClass('open');
+        } else {
+            $('#right-side').addClass('open')
+        }
+    });
+
+
 
 });
