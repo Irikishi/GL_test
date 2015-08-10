@@ -108,7 +108,6 @@ $(document).ready(function(){
             } else {
                 attrRequired = ' ';
             }
-            console.log(attrRequired);
 
             if (formAreas[i].type === "textarea") {
                 $('#popup form').append('<div class="area"><label for="text-' + i + '">' +
@@ -169,7 +168,6 @@ $(document).ready(function(){
     $(window).scroll(function(){
         if (timeout) clearTimeout(timeout);
             timeout = setTimeout(function(){
-            console.log(asideOffset);
             if ($(window).scrollTop() > asideOffset) {
                 $('#right-side').css('top', $(window).scrollTop() - asideOffset + 'px');
             } else {

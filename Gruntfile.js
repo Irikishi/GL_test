@@ -13,12 +13,16 @@ module.exports = function(grunt) {
         },
 
         concat: {
-            dist: {
-                src: [
-                    'css/normalize.css',
-                    'css/main.css'
-                ],
-                dest: 'dist/build_main.css',
+            basic: {
+                src: ['css/normalize.css', 'css/main.css'],
+                dest: 'dist/build_main.css'
+            },
+            extras: {
+                src: ['js/jquery-1.11.3.min.js',
+                    'js/jquery.validate.min.js',
+                    'js/additional-methods.min.js',
+                    'js/main.js'],
+                dest: 'dist/build_main.js'
             }
         },
 
@@ -26,6 +30,13 @@ module.exports = function(grunt) {
             build: {
                 src: 'dist/build_main.css',
                 dest: 'dist/build_main.min.css'
+            }
+        },
+
+        uglify: {
+            build: {
+                src: 'dist/build_main.js',
+                dest: 'dist/build_main.min.js'
             }
         }
 
@@ -38,6 +49,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
 
     // 4. Указываем, какие задачи выполняются, когда мы вводим «grunt» в терминале
-    grunt.registerTask('default', ['less'], ['concat'], ['cssmin']);
+    grunt.registerTask('default', ['less'], ['concat'], ['cssmin'], ['uglify']);
 
 };
