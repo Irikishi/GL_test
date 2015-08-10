@@ -11,6 +11,7 @@
         <!-- Place favicon.ico in the root directory -->
 
         <link href='http://fonts.googleapis.com/css?family=Arimo:400,400italic,700,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="dist\build_main.min.css">
 
     </head>
@@ -29,7 +30,7 @@
 
             <div id="main" class="container">
                 <div id="content">
-                    <div class="std-block">
+                    <div id="start" class="std-block">
                         <h1>Общие требования<br>
                         (h1 - Arimo, 36px; color: #292929)</h1>
                         <ol>
@@ -165,12 +166,38 @@
 
                     </div>
                     <div id="block-ico" class="std-block">
-                        333
+                        <h3>Часть 3: сверстать блок с иконками.</h3>
+
+                        <p>На примере показать техники верстки икинок</p>
+                        <ul>
+                            <li>CSS-спрайты</li>
+                            <li>Иконочные шрифты</li>
+                        </ul>
+                        <p>Какие еще техники могут быть использованы?</p>
+
+                        <p>Пример блока:</p>
+                        <ul class="icons-sprites">
+                            <li class="ico photo"><i></i><span>23 фото</span></li>
+                            <li class="ico watch"><i></i><span>1456 просмотров</span></li>
+                            <li class="ico favorite"><i></i><span>добавить в избранное</span></li>
+                        </ul>
+                        <ul class="icons-font">
+                            <li class="ico"><i class="fa fa-camera"></i><span>23 фото</span></li>
+                            <li class="ico"><i class="fa fa-eye"></i><span>1456 просмотров</span></li>
+                            <li class="ico"><i class="fa fa-heart"></i><span>добавить в избранное</span></li>
+                        </ul>
+                        <ul class="icons-b64">
+                            <li class="ico photo"><i></i><span>23 фото</span></li>
+                            <li class="ico watch"><i></i><span>1456 просмотров</span></li>
+                            <li class="ico favorite"><i></i><span>добавить в избранное</span></li>
+                        </ul>
+                        <p>Есть еще вариант с svg</p>
                     </div>
                 </div>
                 <aside id="right-side">
                     <nav class="std-block">
                         <ul>
+                            <li><a href="#start">Общие требования</a></li>
                             <li><a href="#news">Часть 1: список новостей</a></li>
                             <li><a href="#feedback">Часть 2: форма</a></li>
                             <li><a href="#block-ico">Часть 3: блок с иконками</a></li>

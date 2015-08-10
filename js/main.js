@@ -164,4 +164,22 @@ $(document).ready(function(){
     });
 
 
+    var timeout,
+        asideOffset = $('#right-side').offset().top - 26;
+    $(window).scroll(function(){
+        if (timeout) clearTimeout(timeout);
+            timeout = setTimeout(function(){
+            console.log(asideOffset);
+            if ($(window).scrollTop() > asideOffset) {
+                $('#right-side').css('top', $(window).scrollTop() - asideOffset + 'px');
+            } else {
+                $('#right-side').css('top', $(window).scrollTop() + 'px');
+            }
+
+        }, 200);
+    });
+
+
+
+
 });
